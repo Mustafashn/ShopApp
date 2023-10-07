@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopapp</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    @RenderSection("Css", required: false)
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+     @await Html.PartialAsync("_navbar")
+
+    <main class="my-3">
+            <div class="container">
+                @if(TempData["message"] != null) {
+                    <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))"/>
+                    
+            } 
+            @RenderBody() 
+        </div>
+    </main>
+
+    <footer class="py-5 bg-dark text-white text-center">
+        Shop App || 2023
+    </footer>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    
+</body>
+
+</html>

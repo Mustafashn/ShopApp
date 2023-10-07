@@ -1,0 +1,92 @@
+@model CategoryModel
+<h1 class="h3">Edit Category</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Admin" asp-action="EditCategory" method="POST">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div id="products">
+                @for(int i=0 ;i <Model.Products.Count; i++){
+                    <input type="hidden" name="Products[@i].ProductId" value="@Model.Products[@i].ProductId">
+                    <input type="hidden" name="Products[@i].Name" value="@Model.Products[@i].Name">
+                    <input type="hidden" name="Products[@i].ImageUrl" value="@Model.Products[@i].ImageUrl">
+                    <input type="hidden" name="Products[@i].Price" value="@Model.Products[@i].Price">
+                    <input type="hidden" name="Products[@i].isApproved" value="@Model.Products[@i].isApproved.ToString()">
+                }
+            </div>
+            <input type="hidden" asp-for="CategoryId">
+            <div class="form-group row mt-2">
+                <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input  class="form-control" asp-for="Name" >
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input  class="form-control" asp-for="Url" >
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Edit Category</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <td style="width:50px">Id</td>
+                            <td style="width:100px">Image</td>
+                            <td>Name</td>
+                            <td style="width:30px">Price</td>
+                            <td style="width:30px">Approve</td>
+                            <td style="width:130px" ></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(Model.Products.Count > 0) {
+                            @foreach(var item in Model.Products){
+                            <tr>
+                                <td>@item.ProductId</td>
+                                <td><img src="~/img/@item.ImageUrl" width="80"></td>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@if(item.isApproved){
+                                        <i  style="color:green" class="fas fa-check-circle"></i>  
+                                    }
+                                    else{
+                                        <i style="color:red" class="fas fa-times-circle"></i>
+                                    }
+                                </td>
+                                <td>
+                                    <a href="/admin/products/edit/@item.ProductId" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                    <form action="/admin/deleteproductfromcategory" method="POST" style="display:inline">
+                                        <input type="hidden" name="ProductId" value="@item.ProductId">
+                                        <input type="hidden" name="CategoryId" value="@Model.CategoryId">
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        }
+                        else {
+                            <div class="alert alert-warning">
+                                <h3>No Products</h3>
+                            </div>
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+}

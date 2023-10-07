@@ -1,0 +1,9 @@
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.deps.json
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.dll
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.pdb
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.AssemblyInfo.cs
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.csproj.CoreCompileInputs.cache
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.dll
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.pdb
+C:\Users\musta\Documents\UdemyWebProgramlama\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.csprojAssemblyReference.cache
